@@ -1,0 +1,43 @@
+diff --git a/main.js b/main.js
+index 2f10e71..f8f3955 100644
+--- a/main.js
++++ b/main.js
+@@ -2,7 +2,7 @@ function main(){
+     console.log("Start");
+     var caCanvas = document.createElement("canvas");
+     document.body.appendChild(caCanvas);
+-    var captcha = document.getElementById('captcha-img');
++    var captcha = document.getElementsByTagName('img')[0];
+     caCanvas.width = captcha.naturalWidth;
+     caCanvas.height= captcha.naturalHeight;
+     var ctx = caCanvas.getContext('2d');
+@@ -44,7 +44,7 @@ function main(){
+     var input=new Array(1);
+     var outputArr;
+     var output;
+-    var capForm = document.getElementById('captcha');
++    var capForm = document.getElementsByName('ans')[0];
+     psw = document.getElementById('pass');
+     user = document.getElementById('user');
+     var str = '';
+@@ -72,6 +72,7 @@ function main(){
+     console.log(str);
+     button = document.getElementsByClassName("btn");
+     isAutoLog();
++    document.getElementsByTagName("input")[1].click()
+     //drawCut(imgGrey,recordX,recordY,number);
+ }
+ function isAutoLog(){
+diff --git a/manifest.json b/manifest.json
+index b2b7e7c..e56f5eb 100644
+--- a/manifest.json
++++ b/manifest.json
+@@ -3,7 +3,7 @@
+   "description": "recognize and fill captcha on jAccount",
+   "version": "1.4",
+   "content_scripts": [{
+-    "matches":["https://jaccount.sjtu.edu.cn/*"],
++    "matches":["http://111.186.57.85:10202/*"],
+     "js":["main.js"],
+     "run_at":"document_start",
+     "all_frame":true
