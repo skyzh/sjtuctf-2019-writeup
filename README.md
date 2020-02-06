@@ -37,7 +37,7 @@ q = 10^256 * b + a
 ```
 Therefore,
 ```
-n = p * q = 10^512 * ab + 10^256 * (a + b) + ab
+n = p * q = 10^512 * ab + 10^256 * (a^2 + b^2) + ab
 ```
 As both a, b < 10^256, we can obtain `a*b`, and then obtain `a + b`. As a, b are known, we may obtain p, q. Then we can decrypt the ciphertext with standard RSA methods.
 
